@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.apache.hadoop.fs.*;
 
-import java.beans.Transient;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -31,6 +30,20 @@ import java.net.URISyntaxException;
  *      也提供了 set(name, value)，来手动设置用户自定义的参数！
  *
  * 3. FileStatus 代表一个文件的状态（文件的属性信息）
+ *
+ * 4. offset 和 length
+ *      offset： 是偏移量，指块在文件中的起始位置
+ *      length： 是长度，指块大小
+ *      eg: xxx.zip  390M
+ *                            length     offset
+ *      blk1:   0-128M         128M        0
+ *      blk2:   128-256M       128M        128M
+ *      ...
+ *      blk4:   384-390M       6M          384
+ *
+ * 5. LocatedFileStatus
+ *      LocatedFileStatus 是 FileStatus的子类，除了文件的属性，还有块的位置信息！
+ *
  * */
 
 
@@ -107,6 +120,24 @@ public class HDFSClint {
             Path filePath = fileStatus.getPath();
             System.out.println(filePath.getName()+"是否是目录： "+fileStatus.isDirectory());
             System.out.println(filePath.getName()+"是否是文件： "+fileStatus.isFile());
+        }
+    }
+
+    // 获取到文件的块信息
+    @Test
+    public void testGetBlockInformation() throws IOException {
+        Path path = new Path("/idea_hdfs/hello.zip");
+        RemoteIterator<LocatedFileStatus> status = fs.listLocatedStatus(path);
+        while (status.hasNext()) {
+            LocatedFileStatus locatedFileStatus = status.next();
+            System.out.println("Owner："+locatedFileStatus.getOwner());
+            System.out.println("Group："+locatedFileStatus.getGroup());
+            // 块的位置信息
+            BlockLocation[] blockLocations = locatedFileStatus.getBlockLocations();
+            for (BlockLocation blockLocation : blockLocations) {
+                System.out.println(blockLocation);
+                System.out.println("----------------------");
+            }
         }
     }
 
