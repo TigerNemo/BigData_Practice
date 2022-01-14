@@ -13,8 +13,8 @@ import java.io.IOException;
 /**
  * 1. 统计手机号(String)的上行流量(long, int)， 下行流量(long, int)， 总流量(long, int)
  *
- *      id     手机号      从哪个站点发来的        访问哪个域名      上行流量  下行流量  状态码
- * eg:  1	13736230513	  192.196.100.1	    www.atguigu.com	    2481	24681	200
+ * id   手机号 从哪个站点发来的    访问哪个域名  上行流量    下行流量    状态码
+ * 1    13736230513 192.196.100.1   www.atguigu.com 2481    24681   200
  *
  *
  * 手机号为key, Bean{上行(long, int)， 下行(long, int)， 总流量(long, int)}为 value
