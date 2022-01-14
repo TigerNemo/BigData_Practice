@@ -27,9 +27,9 @@ public class WCDriver {
         Configuration conf = new Configuration();
         conf.set("fs.defaultFS", "hdfs://localhost:9000");
 
-        // YARN上运行
-        conf.set("mapreduce.framework.name", "yarn");
-        conf.set("yarn.resourcemanager.hostname", "localhost");
+//        // YARN上运行
+//        conf.set("mapreduce.framework.name", "yarn");
+//        conf.set("yarn.resourcemanager.hostname", "localhost");
 
         // 保证输出目录不存在
         FileSystem fs = FileSystem.get(conf);
