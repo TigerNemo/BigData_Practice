@@ -16,8 +16,15 @@ import java.io.IOException;
  * id   手机号 从哪个站点发来的    访问哪个域名  上行流量    下行流量    状态码
  * 1    13736230513 192.196.100.1   www.atguigu.com 2481    24681   200
  *
- *
  * 手机号为key, Bean{上行(long, int)， 下行(long, int)， 总流量(long, int)}为 value
+ *
+ *
+ * 2. 自定义分区器：
+ *   手机号136， 137， 138, 139 开头的都分别放到一个独立的 4 个文件中， 其他开头的放到一个文件中。
+ *
+ *
+ * 3. 自定义排序器：
+ *
  *
  * */
 
@@ -58,6 +65,11 @@ public class FlowBeanDriver {
         // 设置输入目录和输出目录
         FileInputFormat.setInputPaths(job, inputPath);
         FileOutputFormat.setOutputPath(job, outputPath);
+
+        // 设置 ReduceTask的数量为5
+        job.setNumReduceTasks(5);
+        // 设置使用自定义的分区器
+        job.setPartitionerClass(MyPartitioner.class);
 
         // 运行 job
         job.waitForCompletion(true);
