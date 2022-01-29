@@ -23,9 +23,6 @@ import java.io.IOException;
  *   手机号136， 137， 138, 139 开头的都分别放到一个独立的 4 个文件中， 其他开头的放到一个文件中。
  *
  *
- * 3. 自定义排序器：
- *
- *
  * */
 
 public class FlowBeanDriver {
