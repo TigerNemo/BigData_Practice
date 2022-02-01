@@ -11,6 +11,7 @@ import java.io.IOException;
  * 1. 什么时候需要 Reduce
  *  （1）合并
  *  （2）需要对数据排序
+ *
  * 2. 没有 Reduce 阶段， key-value 不需要实现序列化
  * */
 

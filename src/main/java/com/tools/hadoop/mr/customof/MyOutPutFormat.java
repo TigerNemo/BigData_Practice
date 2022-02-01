@@ -1,6 +1,5 @@
 package com.tools.hadoop.mr.customof;
 
-
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.RecordWriter;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;

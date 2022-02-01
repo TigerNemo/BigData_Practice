@@ -10,6 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
+ *
  * 自定义输出格式：
  * 过滤输入的 log 日志，包含 xupt 的网站输出到 xupt.log， 不包含 xupt 的网站输出到 other.log
  *
