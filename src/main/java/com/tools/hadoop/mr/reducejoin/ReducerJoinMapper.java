@@ -1,4 +1,4 @@
-package com.tools.hadoop.mr.reducerjoin;
+package com.tools.hadoop.mr.reducejoin;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.NullWritable;

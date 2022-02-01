@@ -1,4 +1,4 @@
-package com.tools.hadoop.mr.reducerjoin;
+package com.tools.hadoop.mr.reducejoin;
 
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Partitioner;
