@@ -77,3 +77,4 @@ public class JoinBean implements Writable {
         source = in.readUTF();
     }
 }
+

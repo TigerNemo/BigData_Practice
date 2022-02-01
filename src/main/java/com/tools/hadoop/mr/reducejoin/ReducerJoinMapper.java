@@ -19,6 +19,7 @@ import java.io.IOException;
  *
  * 3. Reducer 只需要输出来自于 order.txt 的数据，需要在 Mapper 中对数据打标记，标记数据的来源。
  * 4. 在 Mapper 中需要获取当前切片的来源，根据来源执行不同的封装逻辑
+ *
  * */
 
 public class ReducerJoinMapper extends Mapper<LongWritable, Text, NullWritable, JoinBean> {

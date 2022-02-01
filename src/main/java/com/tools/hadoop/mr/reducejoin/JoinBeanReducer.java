@@ -51,8 +51,10 @@ public class JoinBeanReducer extends Reducer<NullWritable, JoinBean, NullWritabl
     // Join 数据，写出
     @Override
     protected void cleanup(Context context) throws IOException, InterruptedException {
+
         // 只输出来自 orderDatas 的数据
         for (JoinBean joinBean : orderDatas) {
+
             // 从 Map 中根据 pid 取出 pname，设置到 bean 的 pname 属性中
             joinBean.setPname(pdDatas.get(joinBean.getPid()));
             context.write(NullWritable.get(), joinBean);

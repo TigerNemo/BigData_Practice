@@ -5,7 +5,7 @@ import org.apache.hadoop.mapreduce.Partitioner;
 
 /**
  * 自定义分区器：
- * 1. 保证 pid 相同的 key-value 分到同一个区
+ *      保证 pid 相同的 key-value 分到同一个区
  * */
 
 public class MyPartitioner extends Partitioner<NullWritable, JoinBean> {
