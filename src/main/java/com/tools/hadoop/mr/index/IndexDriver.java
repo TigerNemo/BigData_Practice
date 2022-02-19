@@ -55,6 +55,7 @@ public class IndexDriver {
         // 作为整个 Job 的配置
         Configuration conf1 = new Configuration();
         Configuration conf2 = new Configuration();
+        //设置行的分隔符，这里是制表符\t，第一个制表符前面的是Key，第一个制表符后面的内容都是value
         conf2.set("mapreduce.input.keyvaluelinerecordreader.key.value.separator", "-");
 
         // 保证输出目录不存在
