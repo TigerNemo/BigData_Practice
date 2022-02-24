@@ -47,7 +47,7 @@ import java.net.URISyntaxException;
  * */
 
 
-public class HDFSClint {
+public class HDFSClient {
 
     private FileSystem fs;
     private Configuration conf = new Configuration();
