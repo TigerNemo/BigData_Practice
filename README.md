@@ -5,8 +5,10 @@
 - [HDFS 客户端常见操作](https://github.com/TigerNemo/BigData_Practice/tree/master/src/main/java/com/tools/hadoop/hdfs)
 - [MapReduce 案例](https://github.com/TigerNemo/BigData_Practice/tree/master/src/main/java/com/tools/hadoop/mr)
 
-## Zookeeper Pratice
+## Zookeeper Practice
 - [zookeeper 增删改查](https://github.com/TigerNemo/BigData_Practice/blob/master/src/main/java/com/tools/zookeeper/zkclint/ZKClint.java)
 - [zookeeper 实现监听器](https://github.com/TigerNemo/BigData_Practice/blob/master/src/main/java/com/tools/zookeeper/zkwatch/ZKWatch.java)
 - [基于 zookeeper 的服务注册与发现](https://github.com/TigerNemo/BigData_Practice/tree/master/src/main/java/com/tools/zookeeper/discovery)
 
+## HBase Practice
+- [HBase 增删改查](https://github.com/TigerNemo/BigData_Practice/tree/master/src/main/java/com/tools/hbase/hbaseapi)
